@@ -1,0 +1,251 @@
+<!-- 
+Jozsef-Attila Elec
+Group 5
+Student Id : 18037939
+-->
+<html>
+<head>
+<title> ADMIN Booking </title>
+<link rel="stylesheet" href="CSSFile.css">
+<h1> Welcome Admin </h1>
+</head>
+<body>
+<div class="splash-container">
+<div class="splash">
+<h1 class="splash-head"> Administrator</h1>
+<h1 class="splash-subhead"> maintenance</h1>
+</div>
+</div>
+<div class="content-wrapper">
+<div class="content">
+<p> Hello</p>
+<form action='adminFeature.py'>
+<p> Choose what youw ould like to do</p>
+<input type='radio' name="choice" value="fares" onchange='choice(this);' checked="checked" id='prices'> Change prices <br>
+		
+	<p class='content-subhead'> From: </p>
+	<select  name='From' onchange="checkValue(this);" style='display:none' id='froms'>
+						<option value='Aberdeen'>Aberdeen</option>
+						<option value='Birmingham'>Birmingham</option>
+						<option value='Bristol'>Bristol</option>
+						<option value='Cardiff'>Cardiff</option>
+						<option value='Dundee'>Dundee</option>
+						<option value='Glasgow'>Glasgow</option>
+						<option value='London'>London</option>
+						<option value='Manchester'>Manchester</option>
+						<option value='Newcastle'>Newcastle</option>
+						<option value='Southampton'>Southampton</option>
+					</select>
+				<p class='content-subhead'> To: </p>
+					<div id="AberdeenA" style="display: none ;">
+						<select name='To1' >
+							<option value="Portsmouth">Portsmouth</option>
+						</select>
+					</div>
+					<div id="BirminghamA" style="display: none;">
+						<select name='To2' >
+							<option value="Newcastle">Newcastle</option>
+						</select>
+					</div>
+					<div id="BristolA" style="display: none;">
+						<select name='To3' >
+							<option value="Newcastle">Newcastle</option>
+							<option value="Manchester">Manchester</option>
+							<option value="London">London</option>
+							<option value="Glasgow">Glasgow</option>
+						</select>
+							
+					</div>
+					<div id="CardiffA" style="display: none;">
+						<select name='To4' >
+							<option value="Edinburgh">Edinburgh</option>
+						</select>
+					</div>
+					<div id="DundeeA" style="display: none;">
+						<select name='To5' >
+							<option value="Portsmouth">Portsmouth</option>
+						</select>
+					</div>
+					<div id="GlasgowA" style="display: none;">
+						<select name='To6' >
+							<option value="Newcastle">Newcastle</option>
+						</select>
+					</div>
+					<div id="LondonA" style="display: none;">
+						<select name='To7' >
+							<option value="Manchester">Manchester</option>
+						</select>
+					</div>
+					<div id="ManchesterA" style="display: none;">
+						<select name='To8' >
+							<option value="Bristol">Bristol</option>
+							<option value="Southampton">Southampton</option>
+							<option value="Glasgow">Glasgow</option>
+						</select>
+					</div>
+					<div id="NewcastleA" style="display: none;">
+						<select name='To9' >
+							<option value="Manchester">Manchester</option>
+							<option value="Bristol">Bristol</option>
+							<option value="Birmingham">Birmingham</option>
+						</select>
+					</div>
+					<div id="SouthamptonA" style="display: none;">
+						<select name='To10' >
+							<option value="Manchester">Manchester</option>
+						</select>
+					</div>
+<input type='radio' name="choice" value="newroutes" onclick='choice(this);'> Add new routes <br>
+<input type='radio' name="choice" value="changeroute" onclick='choice(this);'> Change routes <br>
+</form>
+
+
+<p> your choice is ',choice,'<p>
+</div>
+</div>
+
+<script>
+
+function choice(that){
+	var vlaue=document.getElementById("prices").value
+		if(that.value== 'fares')
+		{
+			document.getElementById("froms").style.display ="block";
+		
+		}
+		else
+		{
+			document.getElementById("froms").style.display ="none";
+		
+		}
+		
+
+	
+
+
+}
+
+function checkValue(that) {
+		if(that.value == "Aberdeen") {
+			document.getElementById("AberdeenA").style.display ="block";
+			document.getElementById("SouthamptonA").style.display ="none";
+			document.getElementById("NewcastleA").style.display ="none";
+			document.getElementById("ManchesterA").style.display ="none";
+			document.getElementById("LondonA").style.display ="none";
+			document.getElementById("GlasgowA").style.display ="none";
+			document.getElementById("DundeeA").style.display ="none";
+			document.getElementById("BristolA").style.display ="none";
+			document.getElementById("CardiffA").style.display ="none";
+			document.getElementById("BirminghamA").style.display ="none";
+			}
+		else if(that.value == "Birmingham") {
+			document.getElementById("BirminghamA").style.display ="block";
+			document.getElementById("SouthamptonA").style.display ="none";
+			document.getElementById("NewcastleA").style.display ="none";
+			document.getElementById("ManchesterA").style.display ="none";
+			document.getElementById("LondonA").style.display ="none";
+			document.getElementById("GlasgowA").style.display ="none";
+			document.getElementById("DundeeA").style.display ="none";
+			document.getElementById("CardiffA").style.display ="none";
+			document.getElementById("BristolA").style.display ="none";
+			document.getElementById("AberdeenA").style.display ="none";
+			}
+		else if(that.value == "Bristol") {
+			document.getElementById("BristolA").style.display ="block";
+			document.getElementById("SouthamptonA").style.display ="none";
+			document.getElementById("NewcastleA").style.display ="none";
+			document.getElementById("ManchesterA").style.display ="none";
+			document.getElementById("LondonA").style.display ="none";
+			document.getElementById("GlasgowA").style.display ="none";
+			document.getElementById("DundeeA").style.display ="none";
+			document.getElementById("CardiffA").style.display ="none";
+			document.getElementById("BirminghamA").style.display ="none";
+			document.getElementById("AberdeenA").style.display ="none";
+			}
+		else if(that.value == "Cardiff") {
+			document.getElementById("CardiffA").style.display ="block";
+			document.getElementById("SouthamptonA").style.display ="none";
+			document.getElementById("NewcastleA").style.display ="none";
+			document.getElementById("ManchesterA").style.display ="none";
+			document.getElementById("LondonA").style.display ="none";
+			document.getElementById("GlasgowA").style.display ="none";
+			document.getElementById("DundeeA").style.display ="none";
+			document.getElementById("BristolA").style.display ="none";
+			document.getElementById("BirminghamA").style.display ="none";
+			document.getElementById("AberdeenA").style.display ="none";
+			}
+		else if(that.value == "Dundee") {
+			document.getElementById("DundeeA").style.display ="block";
+			document.getElementById("SouthamptonA").style.display ="none";
+			document.getElementById("NewcastleA").style.display ="none";
+			document.getElementById("ManchesterA").style.display ="none";
+			document.getElementById("LondonA").style.display ="none";
+			document.getElementById("GlasgowA").style.display ="none";
+			document.getElementById("CardiffA").style.display ="none";
+			document.getElementById("BristolA").style.display ="none";
+			document.getElementById("BirminghamA").style.display ="none";
+			document.getElementById("AberdeenA").style.display ="none";
+			}
+		else if(that.value == "Glasgow") {
+			document.getElementById("GlasgowA").style.display ="block";
+			document.getElementById("SouthamptonA").style.display ="none";
+			document.getElementById("NewcastleA").style.display ="none";
+			document.getElementById("ManchesterA").style.display ="none";
+			document.getElementById("LondonA").style.display ="none";
+			document.getElementById("DundeeA").style.display ="none";
+			document.getElementById("CardiffA").style.display ="none";
+			document.getElementById("BristolA").style.display ="none";
+			document.getElementById("BirminghamA").style.display ="none";
+			document.getElementById("AberdeenA").style.display ="none";
+			}
+		else if(that.value == "London") {
+			document.getElementById("LondonA").style.display ="block";
+			document.getElementById("SouthamptonA").style.display ="none";
+			document.getElementById("NewcastleA").style.display ="none";
+			document.getElementById("ManchesterA").style.display ="none";
+			document.getElementById("GlasgowA").style.display ="none";
+			document.getElementById("CardiffA").style.display ="none";
+			document.getElementById("BristolA").style.display ="none";
+			document.getElementById("BirminghamA").style.display ="none";
+			document.getElementById("AberdeenA").style.display ="none";
+			document.getElementById("DundeeA").style.display ="none";
+			}
+		else if(that.value == "Manchester") {
+			document.getElementById("ManchesterA").style.display ="block";
+			document.getElementById("SouthamptonA").style.display ="none";
+			document.getElementById("NewcastleA").style.display ="none";
+			document.getElementById("LondonA").style.display ="none";
+			document.getElementById("GlasgowA").style.display ="none";
+			document.getElementById("CardiffA").style.display ="none";
+			document.getElementById("BristolA").style.display ="none";
+			document.getElementById("BirminghamA").style.display ="none";
+			document.getElementById("AberdeenA").style.display ="none";
+			document.getElementById("DundeeA").style.display ="none";
+			}
+		else if(that.value == "Newcastle") {
+			document.getElementById("NewcastleA").style.display ="block";
+			document.getElementById("SouthamptonA").style.display ="none";
+			document.getElementById("ManchesterA").style.display ="none";
+			document.getElementById("LondonA").style.display ="none";
+			document.getElementById("GlasgowA").style.display ="none";
+			document.getElementById("CardiffA").style.display ="none";
+			document.getElementById("BristolA").style.display ="none";
+			document.getElementById("BirminghamA").style.display ="none";
+			document.getElementById("AberdeenA").style.display ="none";
+			document.getElementById("DundeeA").style.display ="none";
+			}
+		else {
+			document.getElementById("SouthamptonA").style.display ="block";
+			document.getElementById("NewcastleA").style.display ="none";
+			document.getElementById("ManchesterA").style.display ="none";
+			document.getElementById("LondonA").style.display ="none";
+			document.getElementById("GlasgowA").style.display ="none";
+			document.getElementById("CardiffA").style.display ="none";
+			document.getElementById("BristolA").style.display ="none";
+			document.getElementById("BirminghamA").style.display ="none";
+			document.getElementById("AberdeenA").style.display ="none";
+			document.getElementById("DundeeA").style.display ="none";
+			}
+		}
+
+</script>

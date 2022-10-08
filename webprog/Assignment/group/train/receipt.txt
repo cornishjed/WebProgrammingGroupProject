@@ -1,0 +1,1 @@
+Booking number: B1o4c5, Your Train leaves from:Bristol, at:8:00:00 and arrives to:Manchester at :15:30:00, on:2019-04-11, Passengers:1 adults, 1 children and 1 youngling, Total price: £250.0

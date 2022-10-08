@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Grand Travel Booking - Great deals to popular UK destinations</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="w3.css">
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <script>
+
+
+        function formValidation(){
+
+            var city1 = document.getElementById("fromCity").value;
+			var city2 = document.getElementById("toCity").value;
+			
+			if (city1 == city2)
+			{
+				//alert ('Cannot book flight from/to same city');
+				document.getElementById("dest").innerHTML = "Cannot book flight from/to same city";
+				return false;
+			}
+			else if ((city1 == 'Newcastle') && (city2 != ('Bristol' || 'Manchester' || 'Birmingham')))
+			{
+				document.getElementById("dest").innerHTML = "To Bristol, Manchester and Birmingham only.";
+				return false;
+			}
+			else if ((city1 == 'Bristol') && (city2 != ('Newcastle' || 'Manchester' || 'London' || 'Glasgow')))
+			{
+				document.getElementById("dest").innerHTML = "To Newcastle, Manchester, London and Glasgow only.";
+				return false;
+			}
+			else if ((city1 == 'Cardiff') && (city2 != 'Edinburgh'))
+			{
+				document.getElementById("dest").innerHTML = "To Edinburgh only.";
+				return false;
+			}
+			else if ((city1 == 'Manchester') && (city2 != ('Bristol' || 'Glasgow' || 'Southampton')))
+			{
+				document.getElementById("dest").innerHTML = "To Bristol, Glasgow and Southampton only.";
+				return false;
+			}
+			else if ((city1 == 'Newcastle') && (city2 != ('Bristol' || 'Manchester' || 'Birmingham')))
+			{
+				document.getElementById("dest").innerHTML = "To Bristol, Manchester and Birmingham only.";
+				return false;
+			}
+			else if ((city1 == 'London') && (city2 != 'Manchester'))
+			{
+				document.getElementById("dest").innerHTML = "To Manchester only.";
+				return false;
+			}
+			else if ((city1 == 'Glasgow') && (city2 != 'Newcastle'))
+			{
+				document.getElementById("dest").innerHTML = "To Newcastle only.";
+				return false;
+			}
+			else if ((city1 == 'Portsmouth') && (city2 != 'Dundee'))
+			{
+				document.getElementById("dest").innerHTML = "To Dundee.";
+				return false;
+			}
+			else if ((city1 == 'Dundee') && (city2 != 'Portsmouth'))
+			{
+				document.getElementById("dest").innerHTML = "To Portsmouth only.";
+				return false;
+			}
+			else if ((city1 == 'Edinburgh') && (city2 != 'Cardiff'))
+			{
+				document.getElementById("dest").innerHTML = "To Bristol, Manchester and Birmingham only.";
+				return false;
+			}
+			else if ((city1 == 'Southampton') && (city2 != 'Manchester'))
+			{
+				document.getElementById("dest").innerHTML = "To Manchester only.";
+				return false;
+			}
+			else if ((city1 == 'Birmingham') && (city2 != 'Newcastle'))
+			{
+				document.getElementById("dest").innerHTML = "To Newcastle only.";
+				return false;
+			}
+			else if ((city1 == 'Aberdeen') && (city2 != 'Portsmouth'))
+			{
+				document.getElementById("dest").innerHTML = "To Portsmouth only.";
+				return false;
+			}
+			else
+			{
+				document.getElementById("dest").innerHTML = "";
+			}			
+
+			
+            var userdate = document.getElementById("usrdate").value;
+			var adult = document.getElementById("adult").value;
+			var childl = document.getElementById("childl").value;
+			var childs = document.getElementById("childs").value;
+			
+			
+            
+			if (!userdate)
+			{
+				//alert ('Date must be specified');
+				document.getElementById("when").innerHTML = "Date must be specified";
+				return false;
+			}
+			
+			else
+			{
+				document.getElementById("when").innerHTML = "";
+			}
+			
+			
+			if((adult == 0) && (childs >= 1))
+			{
+				document.getElementById("msg").innerHTML = "Children under 10 must be accompanied by an adult";
+				return false;
+			}
+			else
+			{
+				document.getElementById("msg").innerHTML = "";
+			}
+			
+			if((adult == 0) && (childl == 0))
+			{
+				//alert ('At least 1 passenger please');
+				document.getElementById("msg").innerHTML = "At least 1 passenger please";
+				return false;
+			}
+			else if((adult == 0) && (childl > 0))
+			{
+				document.getElementById("msg").innerHTML = "";
+			}
+			else
+			{
+				document.getElementById("msg").innerHTML = "";
+			}
+			
+			
+            userDate = new Date(userdate);
+
+           // alert ("User Date " + userDate);
+
+            CurrentDate = new Date();
+            //alert ("Current Date " + CurrentDate);
+
+			var day = userDate.getDay();
+			
+			if (day == 6 || day == 0)
+			{
+				//alert ('Flights Mon-Fri only');
+				document.getElementById("when").innerHTML = "Flights Mon-Fri only";
+                document.MyForm.usrdate.focus();
+                document.getElementById("usrdate").style.border='1px solid red';
+				return false;
+			}
+            else if (userDate < CurrentDate)
+            {
+                //alert ('Please select a date from today');
+				document.getElementById("when").innerHTML = "Please select a date from today";
+                document.MyForm.usrdate.focus();
+                document.getElementById("usrdate").style.border='1px solid red';
+                return false;
+            }
+			else
+			{
+				document.getElementById("when").innerHTML = "";
+			}
+            
+           // alert(userDate - CurrentDate); // returns milliseconds 
+
+            //Check number of months between current date and user date
+            var difference = userDate.getMonth() - CurrentDate.getMonth();
+
+            if (difference > 3)
+            {
+                //alert ('Only 3 months advance booking is allowed');
+				document.getElementById("when").innerHTML = "Only 3 months advance booking is allowed";
+                document.MyForm.usrdate.focus();
+                document.getElementById("usrdate").style.border='1px solid red';
+				return false;
+
+            }
+            else
+            {
+                //document.getElementById("temp").innerHTML = "Date is validated";
+                //alert('Date is validated')
+				document.getElementById("dest").innerHTML = "";
+                return true;          
+            }
+                
+        }
+        </script>
+	</head>
+<body>
+<!-- Navbar -->
+<div class="w3-display-container">
+  <div class="w3-bar w3-black w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="http://localhost/webprog/Assignment/group/index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
+    <a href="" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-white">Plane</a>
+    <a href="http://localhost/webprog/Assignment/group/train/HomePage.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-grey">Train</a>
+    <a href="http://localhost/webprog/Assignment/group/taxi/index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-grey">Taxi</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="http://localhost/webprog/Assignment/group/" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Plane</a>
+    <a href="http://localhost/webprog/Assignment/group/train/HomePage.html" class="w3-bar-item w3-button w3-padding-large">Train</a>
+    <a href="http://localhost/webprog/Assignment/group/taxi/index.html" class="w3-bar-item w3-button w3-padding-large">Taxi</a>
+  </div>
+</div>
+
+
+<div class="w3-display-container" style="margin-bottom:50px">
+  <img src="http://localhost/webprog/Assignment/new/images/london.jpg" alt="logo and london" style="width:100%">
+</div>
+
+
+<div class="w3-row w3-container" style="margin:50px 0">
+<div class="w3-half w3-container">
+    <h2>About Us</h2>
+    <p>Grand Travel Booking is a <b>premium brand</b> of transport booking service that aims to serve customers from business to families. We offer a range of transport options 
+	running at several times per day between several of the UK's major cities and top destinations. Choose between speed and comfort or affordability and economical, we 
+	have got you covered for any budget. Don't delay and book with us today. <br><em> - from the Grand Travel Booking Team</em>
+	</p>
+	<br>
+	<h2>How to Book</h2>
+	<p>Simply fill in the details required to your right and click 'Show Avalibility'. You will be directed to the next page that shows the booking avalibility and prices.</p>
+	<ul>
+		<li>Departures and destinations cannot be of the same city</li>
+		<li>Only bookings from today's date and up to 3 months may be made</li>
+		<li>Up to 10 people per booking</li>
+		<li>Children under 12 travel for half price with a paying adult</li>
+		<li>Children under 10 cannot travel without an adult</li>
+	</ul>
+  </div>
+<div class="w3-half w3-container">
+
+
+    <Form action="searchProcess.py" method="POST" name="MyForm" onsubmit="return formValidation()">
+	<h1><strong>Travel Search</strong></h1>
+		<h4>Departure: <select name="fromCity" id="fromCity"></h4>
+			<option value="Aberdeen">Aberdeen</option>
+			<option value="Bristol">Bristol</option>
+			<option value="Birmingham">Birmingham</option>
+			<option value="Cardiff">Cardiff</option>
+			<option value="Edinburgh">Edinburgh</option>
+			<option value="Newcastle">Newcastle</option>
+			<option value="Manchester">Manchester</option>
+			<option value="London">London</option>
+			<option value="Dundee">Dundee</option>
+			<option value="Glasgow">Glasgow</option>
+			<option value="Portsmouth">Portsmouth</option>
+			<option value="Southampton">Southampton</option>
+		</select>
+	<p>to</p>
+		<h4>Destination: <select name="toCity" id="toCity"></h4>
+			<option value="Aberdeen"><p>Aberdeen</p></option>
+			<option value="Bristol">Bristol</option>
+			<option value="Birmingham">Birmingham</option>
+			<option value="Cardiff">Cardiff</option>
+			<option value="Edinburgh">Edinburgh</option>
+			<option value="Newcastle">Newcastle</option>
+			<option value="Manchester">Manchester</option>
+			<option value="London">London</option>
+			<option value="Dundee">Dundee</option>
+			<option value="Glasgow">Glasgow</option>
+			<option value="Portsmouth">Portsmouth</option>
+			<option value="Southampton">Southampton</option>
+		</select>
+		<p id='dest' style="color:red;"></p>
+        <hr>
+        <h5>When? <input type=date name="usrdate" id="usrdate"></h5>            
+            
+        <p id='when' style="color:red;"></p>
+
+		<h5>Adults: <input type="number" value="0" min="0" max="10" name="adult" id="adult"/></h5>
+		<h5>Children 10 to 12 years old: <input type="number" value="0" min="0" max="10" name="childl" id="childl"/></h5>
+		<h5>Children under 10: <input type="number" value="0" min="0" max="10" name="childs" id="childs"/></h5>
+		<p id='msg' style="color:red;"></p>
+		<br><br>
+		<input class="w3-btn w3-black" type="submit" value="Show Avalibility">
+	</form></div>
+</div>
+
+
+
+<div class="w3-display-container" style="margin-bottom:50px">
+  <img src="http://localhost/webprog/Assignment/new/images/wing.jpeg" alt="plane wing" style="width:100%">
+  <div class="w3-display-bottomleft w3-container w3-black w3-hover-gray w3-hide-small"
+   style="bottom:10%;opacity:0.7;width:70%">
+  <h2><b>4 Good Reasons<br>For travelling with us</b></h2>
+</div>
+</div>
+
+<div class="w3-row w3-container" style="margin:50px 0">
+<div class="w3-half w3-container">
+  <div class="w3-topbar w3-border-black">
+    <img src="http://localhost/webprog/Assignment/new/images/business.jpg" alt="office" style="width:100%">
+    <h2>Business</h2>
+    <p>Our comprehensive range of travel options ensure you will reach that all important meeting in good time. 
+	On-board power service enables our customers to continue working without missing a beat.</p>
+  </div>
+</div>
+
+<div class="w3-half w3-container">
+  <div class="w3-topbar w3-border-black">
+    <img src="http://localhost/webprog/Assignment/new/images/apple.jpg" alt="apple" style="width:100%">
+    <h2>Affordablity</h2>
+    <p>Travelling by bus provides our lowest costs to travel around the country and is perect for those 
+	travelling on a budget.</p>
+  </div>
+</div>
+</div>
+
+<div class="w3-row w3-container" style="margin:50px 0">
+<div class="w3-half w3-container">
+  <div class="w3-topbar w3-border-black">
+    <img src="http://localhost/webprog/Assignment/new/images/plane.jpg" alt="plane" style="width:100%">
+    <h2>Several UK Cities</h2>
+    <p>Travel between the UK's major cities is avalible.</p>
+  </div>
+</div>
+
+<div class="w3-half w3-container">
+  <div class="w3-topbar w3-border-black">
+    <img src="http://localhost/webprog/Assignment/new/images/family.jpg" alt="family" style="width:100%">
+    <h2>Memories to Treasure</h2>
+    <p>Create those unforgettable moments by staying in touch using Grand Travel Booking today.</p>
+    </div>
+</div>
+</div>
+
+<div class="w3-display-container" style="margin-bottom:50px">
+<div class="w3-half w3-container">
+<footer>
+	<p style=font-size:17px>&copy; <em>Grand Travel Booking 2019</em></p>	
+</footer>
+</div>
+</div>
+
+</body>
+</html>
+
+<!-- Jed Powell, group 5 -->

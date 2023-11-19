@@ -1,0 +1,18 @@
+------------------------------------GRAND TRAVEL BOOKING: RECEIPT-----------------------------------
+Grand Travel Booking - Thank you for booking and see you again soon..
+Receipt for Booking ID: 2019/11/29179967
+------------------------------------CUSTOMER DETAILS-----------------------------------
+First Name: Jed
+Last Name: dggrd
+Phone: 07502184671
+------------------------------------JOURNEY DETAILS-----------------------------------
+Journey Date: 2019/11/29
+Departing from: Cardiff
+Time of departure: 6:00:00
+Arriving at: Edinburgh
+Time of arrival: 7:30:00
+No. of adults: 1
+No. of children: 0
+
+Date of purchase: 27/11/2019, 13:26:37
+Total amount payable: £60

@@ -1,0 +1,164 @@
+
+/* Name : Dariusz Kwiatkowski */
+/* Student id: 18016079 */
+
+
+
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image:url('img/taxi.jpg');
+  min-height:100%;
+  margin-bottom: 50px;
+}
+
+.main-text {
+  font-size:8em;
+  text-align:center;
+  color:white;
+  text-transform: uppercase;
+  padding-top:1.3em;
+}
+
+ul {
+  width:100%;
+  position:fixed;
+  top:0;
+}
+
+.NavBar {
+  list-style-type:none;
+  margin:0;
+  padding:0;
+  overflow: hidden;
+}
+
+.NavBar li {
+  float:left;
+  width:16.6%;
+}
+
+.NavBar a {
+  display: block;
+  text-align:center;
+  color:white;
+  padding: 14px 16px;
+  text-decoration: none;
+  background-color: #212;
+}
+
+li a:hover {
+  background-color: #333;
+}
+
+.main-img {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('img/taxi.jpg');
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+}
+
+.img2 {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('img/taxi2.jpg');
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+}
+
+footer {
+  color:white;
+  opacity: 0.5;
+  background-color: black;
+   position:fixed;
+   bottom:0;
+   width:100%;
+   text-align:center;
+   font-size:1em;
+}
+
+.pfaq {
+  font-size: 1.5em;
+  background-color: #212;
+  opacity: 0.5;
+  text-align:center;
+  color:white;
+}
+
+.dbselect {
+  display:block;
+  text-align:center;
+}
+
+.buttonWrapper {
+  text-align:center;
+}
+
+.bookButton {
+  opacity: 0.5;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 5em;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.bookButton:hover {
+  opacity: 0.9;
+  background-color: #32CD32;
+}
+
+.bookingForm {
+  color: white;
+  display:inline-block;
+  text-align:center;
+
+}
+
+.submitButton {
+  width: 173px;
+  opacity: 0.5;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  opacity: 0.9;
+  background-color: #32CD32;
+}
+
+.subForm {
+  color: white;
+}
+
+/* @media only screen and (max-width: 600px) { */
+  /* .NavBar { */
+    /* display:inline-block; */
+    /* vertical-align:top; */
+
+  /* } */
+
+/* } */

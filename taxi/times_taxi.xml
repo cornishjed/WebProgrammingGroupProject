@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.4
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: Apr 04, 2019 at 01:30 PM
+- Server version: 10.1.37-MariaDB
+- PHP Version: 7.3.1
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="webprog" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="times_taxi">
+                CREATE TABLE `times_taxi` (
+                  `Start` varchar(20) NOT NULL,
+                  `Departure` time NOT NULL,
+                  `Dest` varchar(20) NOT NULL,
+                  `Arrival` time NOT NULL,
+                  `Price` int(5) NOT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'travel'
+    -->
+    <database name="webprog">
+        <!-- Table times_taxi -->
+        <table name="times_taxi">
+            <column name="Start">Cardiff</column>
+            <column name="Departure">06:00:00</column>
+            <column name="Dest">Edinburgh</column>
+            <column name="Arrival">17:10:00</column>
+            <column name="Price">180</column>
+        </table>
+        <table name="times_taxi">
+            <column name="Start">Newcastle</column>
+            <column name="Departure">16:45:00</column>
+            <column name="Dest">Bristol</column>
+            <column name="Arrival">00:50:00</column>
+            <column name="Price">195</column>
+        </table>
+        <table name="times_taxi">
+            <column name="Start">Bristol</column>
+            <column name="Departure">08:00:00</column>
+            <column name="Dest">Newcastle</column>
+            <column name="Arrival">16:05:00</column>
+            <column name="Price">210</column>
+        </table>
+        <table name="times_taxi">
+            <column name="Start">Bristol</column>
+            <column name="Departure">11:30:00</column>
+            <column name="Dest">Manchester</column>
+            <column name="Arrival">18:30:00</column>
+            <column name="Price">150</column>
+        </table>
+        <table name="times_taxi">
+            <column name="Start">Manchester</column>
+            <column name="Departure">12:20:00</column>
+            <column name="Dest">Bristol</column>
+            <column name="Arrival">19:20:00</column>
+            <column name="Price">150</column>
+        </table>
+        <table name="times_taxi">
+            <column name="Start">Bristol</column>
+            <column name="Departure">07:40:00</column>
+            <column name="Dest">London</column>
+            <column name="Arrival">14:20:00</column>
+            <column name="Price">150</column>
+        </table>
+        <table name="times_taxi">
+            <column name="Start">London</column>
+            <column name="Departure">11:00:00</column>
+            <column name="Dest">Manchester</column>
+            <column name="Arrival">19:40:00</column>
+            <column name="Price">195</column>
+        </table>
+        <table name="times_taxi">
+            <column name="Start">Glasgow</column>
+            <column name="Departure">14:30:00</column>
+            <column name="Dest">Newcastle</column>
+            <column name="Arrival">22:35:00</column>
+            <column name="Price">195</column>
+        </table>
+        <table name="times_taxi">
+            <column name="Start">Newcastle</column>
+            <column name="Departure">16:15:00</column>
+            <column name="Dest">Manchester</column>
+            <column name="Arrival">20:05:00</column>
+            <column name="Price">195</column>
+        </table>
+        <table name="times_taxi">
+            <column name="Start">Manchester</column>
+            <column name="Departure">18:25:00</column>
+            <column name="Dest">Bristol</column>
+            <column name="Arrival">04:00:00</column>
+            <column name="Price">150</column>
+        </table>
+        <table name="times_taxi">
+            <column name="Start">Bristol</column>
+            <column name="Departure">06:20:00</column>
+            <column name="Dest">Manchester</column>
+            <column name="Arrival">13:20:00</column>
+            <column name="Price">150</column>
+        </table>
+        <table name="times_taxi">
+            <column name="Start">Portsmouth</column>
+            <column name="Departure">12:00:00</column>
+            <column name="Dest">Dundee</column>
+            <column name="Arrival">02:00:00</column>
+            <column name="Price">195</column>
+        </table>
+        <table name="times_taxi">
+            <column name="Start">Dundee</column>
+            <column name="Departure">10:00:00</column>
+            <column name="Dest">Portsmouth</column>
+            <column name="Arrival">00:00:00</column>
+            <column name="Price">195</column>
+        </table>
+        <table name="times_taxi">
+            <column name="Start">Southampton</column>
+            <column name="Departure">12:00:00</column>
+            <column name="Dest">Manchester</column>
+            <column name="Arrival">21:10:00</column>
+            <column name="Price">150</column>
+        </table>
+        <table name="times_taxi">
+            <column name="Start">Birmingham</column>
+            <column name="Departure">16:00:00</column>
+            <column name="Dest">Newcastle</column>
+            <column name="Arrival">01:10:00</column>
+            <column name="Price">195</column>
+        </table>
+        <table name="times_taxi">
+            <column name="Start">Newcastle</column>
+            <column name="Departure">06:00:00</column>
+            <column name="Dest">Birmingham</column>
+            <column name="Arrival">15:10:00</column>
+            <column name="Price">195</column>
+        </table>
+        <table name="times_taxi">
+            <column name="Start">Aberdeen</column>
+            <column name="Departure">07:00:00</column>
+            <column name="Dest">Portsmouth</column>
+            <column name="Arrival">21:00:00</column>
+            <column name="Price">195</column>
+        </table>
+        <table name="times_taxi">
+            <column name="Start">Edinburgh</column>
+            <column name="Departure">18:30:00</column>
+            <column name="Dest">Cardiff</column>
+            <column name="Arrival">03:40:00</column>
+            <column name="Price">180</column>
+        </table>
+    </database>
+</pma_xml_export>
